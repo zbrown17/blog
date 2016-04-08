@@ -32,8 +32,25 @@ angular
         	templateUrl: 'view/stuf.html',
         	controller: "StuffCtrl"
         })
+        .when('/home', {
+            templateUrl:'view/home.html',
+            controller: "HomeCtrl"
+        })
+        .otherwise({
+            redirectTo: '/home'
+        })
 }])
     
     .controller("MainCtrl", ["$scope", function ($scope){
         console.log('worked');
-    }]);
+    }])
+
+
+    .directive('template', function (){
+        return {
+            templateUrl: 'view/_template.html'
+        };
+    })
+
+
+

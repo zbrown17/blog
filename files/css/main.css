@@ -2,3 +2,14 @@ body {
 	background-color: #e6e6e6;
 	color: black;
 }
+.jumbotron {
+  background-image:url('https://zenmonkeystudios.com/wp-content/uploads/2015/11/video-games-category-banner.jpg');
+  height: 345px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  border-left: solid black;
+}
+section {
+    padding-top: 51px;
+}

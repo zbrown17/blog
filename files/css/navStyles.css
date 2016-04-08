@@ -1,6 +1,5 @@
 
 .nav {
-	
 	font-size: 1.1em;
 }
 
@@ -14,7 +13,6 @@
     top: 0px;
     width: 100%;
 }
-
 .nav li {
     display: inline;
     color: black;
@@ -46,7 +44,6 @@
 }
 
 .bot {
-    position: fixed;
     bottom: 0px;
     width: 100%;
     background-color: aliceblue;
