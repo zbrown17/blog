@@ -13,14 +13,18 @@ postRoutes.route('/')
         }));
     })
     .post(function (req, res) {
-        Post.create(req.body, qmw(function (postChanged) {
-            res.send(postRoutes)
+        var blogPost = req.body;
+        var now = new Date();
+        blogPost.date_created = now;
+        blogPost.date_updated = now;
+        Post.create(, qmw(function (newPost) {
+            res.send(newPost)
         }));
     })
     .put(function (req, res) {
         var changedPost = req.body;
         Post.update({_id: changedPost._id}, changedPost, qmw(function (postChanged) {
-            res.send(postRoutes)
+            res.send(postChanged)
         }));
     });
 
