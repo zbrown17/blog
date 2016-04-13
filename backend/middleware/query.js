@@ -1,14 +1,14 @@
 function QueryMiddleware (fn, errFn) {
     var self = this;
     return function (err, data) {
-        if (err) {
+        if (!err) {
+            fn(data);
+        } else {
             if (_.isUndefined(errFn)) {
                 self.defaultQueryErrHandler(err);
             } else {
-                errFn(err)
+                errFn(err);
             }
-        } else {
-            fn(data)
         }
     }
 }

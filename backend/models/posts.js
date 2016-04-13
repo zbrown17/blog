@@ -3,10 +3,10 @@ var mongoose = require('mongoose'),
 
 var postSchema = new Schema({
     title: String,
-    date_created: Date,
-    date_updated: Date,
+    datetime_created: Date,
+    datetime_updated: Date,
     content: {type: String, required: true},
     categories: [String]
-})
+});
 
-module.exports = mongoose.model('Post', postSchema)
+module.exports = mongoose.model('Post', postSchema);
