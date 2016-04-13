@@ -1,0 +1,14 @@
+body {
+	background-color: #e6e6e6;
+	color: black;
+}
+.jumbotron {
+  background-image: url('vjumbo.png');
+  height: 345px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+section {
+    padding-top: 51px;
+}

@@ -1,0 +1,48 @@
+
+.nav {
+	font-size: 1.1em;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    border-bottom: solid black 1px;
+}
+.nav li {
+    display: inline;
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: right;
+    border-bottom: solid white;
+}
+.nav .head {
+	float: left;
+}
+.nav .home a li:hover {
+    border-bottom: solid dodgerblue;
+    color: dodgerblue;
+}
+.nav .help a li:hover {
+    border-bottom: solid #47d147;
+    color: #47d147;
+}
+.nav .about a li:hover {
+    border-bottom: solid #cc00cc;
+    color: #cc00cc;
+}
+.nav .blog a li:hover {
+    border-bottom: solid #e60000;
+    color: #e60000;
+}
+
+
