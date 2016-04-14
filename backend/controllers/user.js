@@ -23,7 +23,6 @@ authRoutes.route('/login')
 
 authRoutes.route('/add-user')
     .post(function (req, res) {
-        console.log(req.body)
         User.create(req.body, function (err, newUser) {
             if (err) {
                 res.status(500).send(err);
