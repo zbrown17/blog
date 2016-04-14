@@ -22,5 +22,5 @@ app.listen(config.port, function () {
 app.use('/api', expressJwt({secret: config.secret}));
 app.use('/auth', require('./controllers/user'));
 app.use('/api/posts', require('./controllers/posts'));
-app.use('api/categories', require('./controllers/category'));
+app.use('/api/categories', require('./controllers/category'));
 
