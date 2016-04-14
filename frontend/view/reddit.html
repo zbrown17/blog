@@ -1,0 +1,68 @@
+<style>
+    
+body {
+    background: #f2f2f2;
+}
+hr {
+    border: solid #e6e6e6 1px;
+}
+img {
+    padding: 6px;
+}
+    
+.block {
+    border: solid white;
+    text-align: center;
+}
+.box, .top {
+    background-color: #ffffff;
+    border: solid #e6e6e6 1px;
+    text-align: center;
+}
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <h3 style="text-align: center"><a href="http://www.reddit.com/r/all" target="_blank">/r/all</a></h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 box">
+            <a ng-href="{{first.data.url}}">
+                <img ng-src="{{first.data.thumbnail}}" height="300px">
+                <div class="block"><h3>{{first.data.title}}</h3></div> 
+            </a>    
+            <a ng-href="http://www.reddit.com/{{first.data.permalink}}">Comments</a>
+            <h5><a ng-href="http://www.reddit.com/r/{{first.data.subreddit}}"target="_blank">r/{{first.data.subreddit}}</a></h5>
+            <h5>{{first.data.score}}</h5>
+        </div>
+    </div>
+    
+    <div class="row">    
+    <div ng-repeat="post in rest">
+        <div class="col-md-4 box" >
+            <a ng-href="{{post.data.url}}">
+                <img ng-src="{{post.data.thumbnail}}" height="160px">
+            </a>
+        <div class="col-md-6" style="text-align:left;"> 
+            <a ng-href="{{post.data.url}}">
+            <div class="block" style="text-align:left;"><h4>{{post.data.title}}</h4></div>
+            </a>
+            
+            <a ng-href="http://www.reddit.com/{{post.data.permalink}}">Comments</a>
+            <h5><a ng-href="http://www.reddit.com/r/{{post.data.subreddit}}" target="_blank">r/{{post.data.subreddit}}</a></h5>
+            <h5>{{post.data.score}}</h5>
+        </div>
+            
+        </div>
+    </div>
+        
+    </div> 
+    
+</div> 

@@ -1,0 +1,181 @@
+<style>
+    .firstP {
+        color:black;
+        background-color: white;
+        border: solid black;
+    }
+    .secondP {
+        border: solid black;
+    }
+    hr {
+        border: solid white 2px;
+    }
+    
+    .thirdP {
+        background-color: white;
+        border: solid black;
+    }
+    .reddit {
+        background-color: white;
+        color:black;
+    }
+    
+</style>
+<br>
+
+<div class="container reddit">
+    <br>    
+        <a href="#/reddit"> <button class="btn btn-primary">Reddit</button></a>
+    <br>
+</div>
+
+
+
+<hr>
+<div ng-controller="ProjectCtrl" class=" container firstP">
+    <br>
+    <div class="container header">
+        <div class="col-md-4">
+        <label>Title: </label><input ng-model="titleSearch">
+        </div>
+        <div class="col-md-4">
+        <label>Year: </label><input ng-model="yearSearch">
+        </div>
+        <div class="col-md-2">
+        <label>Type: </label>    
+        <select ng-model='typeSearch'>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+        </select>
+        </div>
+        <div clas="col-md-2">
+    <button ng-click="search()" class="btn btn-default">Activate</button>
+         </div>
+        </div> 
+    <hr>
+    <div class="container footer">   
+    <div class="row">
+        <div class="col-md-4">
+            <div ng-repeat="movie in results">{{movie.Title}}</div>
+        </div>
+        
+        <div class="col-md-4">
+            <div ng-repeat="movie in results">{{movie.Year}}</div>
+        </div>
+        
+        <div class="col-md-4">    
+            <div ng-repeat="movie in results">{{movie.Type}}</div>
+        </div>    
+    </div>  
+    </div>
+</div>
+
+<hr>
+
+<div ng-controller="ProjectCtrl" class="container secondP">
+<div class="container">
+<br>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Add Item</h4>
+            </div>
+            <div class="panel-body">
+                <label>Title</label>
+                <input class="form-control" type="text" ng-model="addToDo.title">
+                <label>Description</label>
+                <input class="form-control" type="text" ng-model="addToDo.description">
+                <label>Price</label>
+                <input class="form-control" type="text" ng-model="addToDo.price">
+                <label>img URL</label>
+                <input class="form-control" type="text" ng-model="addToDo.imgUrl">
+                <label>Completed</label>
+                <input type="checkbox" ng-model="addToDo.completed">
+                <br>
+                <button ng-click="addDo()" class="btn btn-primary">Add job</button>
+                
+            </div>
+            </div>    
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-sm-1"><h4>Delete</h4></div>
+                <div class="col-sm-2"><h4>Title</h4></div>
+                <div class="col-sm-3"><h4>Description</h4></div>
+                <div class="col-sm-1"><h4>Price</h4></div>
+                <div class="col-sm-3"><h4>Picture</h4></div>
+                <div class="col-sm-1"><h4>Completed</h4></div>
+                <div class="col-sm-1"></div>
+            </div>
+            
+            <div class="row" ng-repeat="item in toDo track by $index">
+                <br>
+                <div class="col-sm-1"><button class="btn btn-danger" ng-click="deleteItem($index)">X</button></div>
+                <div class="col-sm-2">
+                    <div ng-class="{strike: item.completed}">    
+                    {{item.title}}
+                    </div></div>
+                <div class="col-sm-3">
+                    <div ng-class="{strike: item.completed}"> 
+                    {{item.description}}
+                    </div></div>
+                <div class="col-sm-1">
+                    <div ng-class="{strike: item.completed}"> 
+                        {{item.price}}
+                    </div></div>
+                <div class="col-sm-3">
+                    <div ng-class="{strike: item.completed}"> 
+                    <img class="img-responsive" ng-src="{{item.imgUrl}}">
+                    </div></div>
+                <div class="col-sm-1"><input type="checkbox" ng-model="item.completed" ng-click="updateToDo($index)"></div>
+                <div class="col-sm-1"><button class="btn btn-info">Edit</button></div>
+            </div>
+        </div>                
+    </div>
+</div>
+</div>
+<hr>
+
+<div ng-controller="ProjectCtrl" class="container thirdP">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+            <lable>Year</lable>
+            <input class="form-control" ng-init="year" ng-model="year">
+        </div>
+            <div class="form-group">
+            <lable>Make</lable>
+            <input class="form-control" ng-init="make" ng-model="make">
+        </div>
+            <div class="form-group">
+            <lable>Model</lable>
+            <input class="form-control" ng-init="model" ng-model="model">
+        </div>
+            <div class="form-group">
+            <lable>Color</lable>
+            <input class="form-control" ng-init="color" ng-model="color">
+        </div>
+            <div class="btn-group"><button class="btn btn-primary" ng-click="addCar(year,make,model,color)">
+                Add Car</button></div>
+        </div>
+        <div class="col-md-8">
+            <ul ng-repeat="car in carInventory">
+                <li>{{car.year}}</li>
+                <li>{{car.make}}</li>
+                <li>{{car.model}}</li>
+                <li>{{car.color}}</li>
+            </ul>
+            <div class="btn-group"><button class="btn btn-warning" ng-click="printInventory()">Print Inventory</button> </div>
+        </div>
+    </div>    
+</div>
+    
+    
+</div>
+
+<hr>
+
+
